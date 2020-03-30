@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latihan Javascript</title>
+</head>
+<style>
+	body{
+		font-family: arial;
+	}
+	form{
+		margin-top: 10px;
+		text-align: left;
+	}
+	.input{
+		padding: 10px;
+		width: 310px;
+		margin: auto;
+		background-color: lightblue;
+	}
+	.output{
+		padding: 10px;
+		width: 400px;
+		margin: auto;
+	}
+	.output table{
+		width: 400px;
+		padding: 5px;
+		margin: auto;
+		border-collapse: collapse;
+	}
+	.output th{
+		padding: 14px;
+	}
+	.output td{
+		padding: 5px;
+	}
+	form th{
+		padding: 5px;
+	}
+	button{
+		width: 80px;
+		background-color: lightgreen;
+		border: none;
+		border-radius: 20px;
+		padding: 10px;
+		
+	}
+</style>
+<body>
+	<div class="input">
+	<form id= "form1">
+		<table>
+			<tr>
+				<th>NIM</th> 
+				<th>:</th>
+				<th> 
+					<select id="nimMhs" >
+						<option value= ""></option>
+						<option value ="Muh Amin">A11.2015.12345</option>
+						<option value ="Santoso">A11.2015.12346</option>
+						<option value ="Sutrisno">A11.2015.12347</option>
+					</select>
+				</th>
+			</tr>
+			<tr>
+				<th>Nama</th> 
+				<th>:</th>
+				<th><input type="text" id="namaMhs" ></th>
+			</tr>
+			<tr>
+				<th>Nilai Tugas</th> 
+				<th>:</th>
+				<th><input type="number" id="nilTugas" max="100"></th>
+			</tr>
+			<tr>
+				<th>Nilai UTS</th> 
+				<th>:</th>
+				<th><input type="number" id="nilUts" max='100'></th>
+			</tr>
+			<tr>
+				<th>Nilai UAS</th> 
+				<th>:</th>
+				<th><input type="number" id="nilUas" max='100'></th>
+			</tr>
+			<tr>
+				<th>Nilai Akhir</th> 
+				<th>:</th>
+				<th><input type="number" id="nilAkhir" max='100'></th>
+			</tr>
+			<tr>	
+				<th><button>Simpan</button></th>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+		</table>
+	</form>
+	</div>
+	<br><br>
+	<div class="output">
+		<p>
+			<table border="2px solid">
+				 <tr>
+                        <th colspan="2">NIM</th>
+                        <th colspan="2">Nama</th>
+                        <th colspan="2">Nilai Akhir</th>
+                        <th colspan="2">Status</th>
+                    </tr>
+                    <tr id ="td">
+                        <td colspan="2">	-	</td> 
+                        <td colspan="2">	-	</td>   
+                        <td colspan="2">	-	</td>
+                        <td colspan="2">	-	</td>
+                    </tr>
+			</table>
+		</p>
+	</div>
+	<script>
+
+		const select = document.querySelector('select');
+		select.addEventListener('click', function () {
+			const nimMhs = document.getElementById('nimMhs').selectedIndex;
+            const namaMhs = document.getElementsByTagName('option')[nimMhs].value;
+            const namaMhsBaru = document.getElementById('namaMhs');
+
+            namaMhsBaru.value = namaMhs;
+            nama = namaMhs;
+
+            if (namaMhsBaru.value === "Muh Amin") {
+                return nim = "A11.2015.12345"
+            } else if (namaMhsBaru.value === "Santoso") {
+                return nim = "A11.2015.12346"
+            } else {
+                return nim = "A11.2015.12347"
+            }
+        });
+		
+		const nilAkhir = document.getElementsByTagName('input')[4];
+		nilAkhir.addEventListener('click', function() {
+			
+			const nilTugas = document.getElementById('nilTugas');
+            const nilUts = document.getElementById('nilUts');
+            const nilUas = document.getElementById('nilUas');
+            const nilAkhir = document.getElementById('nilAkhir');
+            
+            tnilTugas = nilTugas.value;
+            tnilUts = nilUts.value;
+            tnilUas = nilUas.value;
+
+            tnilAkhir = (0.4 * tnilTugas) + (0.3 * tnilUts) + (0.3 * tnilUas);
+    
+            nilAkhir.value = tnilAkhir;
+            nilai = nilAkhir.value;
+		});
+
+		const button = document.querySelector('button');
+		button.addEventListener('click', function() {
+			button.style.backgroundColor ='red';
+			const td = document.getElementById('td');
+            td.innerHTML =
+            	`<table border="1px solid">
+                    <tr>
+                        <td colspan="2">	${nim}	</td> 
+                        <td colspan="2">	${nama}	</td>   
+                        <td colspan="2">	${nilai}	</td>
+                        <td colspan="2">	${nilai > 60 ? 'LULUS' : 'TIDAK'}	</td>
+                    </tr>
+				</table>` 
+		});
+
+	</script>
+
+</body>
+</html>

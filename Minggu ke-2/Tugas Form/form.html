@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulir Pendataan Mahasiswa</title>
+	<style>
+		body{
+			width: 1000px
+			font-size: 13px;
+			font-family: sans-serif;
+			position: relative;
+		}
+		.a{
+			padding: 30px;
+			background-color: lightgrey;
+			width: 300px;
+			height: 930px;
+			margin-left: 70px;
+			position: absolute;
+		}
+		.b{
+			padding: 30px;
+			background-color: lightgrey;
+			width: 300px;
+			height: 930px;
+			margin-left: 493px;
+			position: absolute;
+		}
+		.c{
+			padding: 30px;
+			background-color: lightgrey;
+			width: 300px;
+			height: 930px;
+			margin-left: 910px;
+			position: absolute;
+		}
+		table input[type='text']{
+			width: 250px;
+		}
+		.a table input[type='number']{
+			width: 250px;
+		}
+		.b table input[type='number']{
+			width: 90px;
+		}
+		.c table input[type='number']{
+			width: 90px;
+		}
+		table input[type='password']{
+			width: 250px;
+		}
+		table select{
+			width: 250px;
+		}
+		table input[type='submit']{
+			width: 95px;
+			height: 25px;
+		}
+		table input[type='reset']{
+			width: 95px;
+			height: 25px;
+		}
+		table td{
+			padding: 5px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="a">
+		<form name = "fpenmhs" action = "form.php" method = "POST">
+			<table>
+				<tr>
+					<td>Fakultas</td>
+				</tr>
+				<tr>
+					<td><b>Kesehatan</b></td>
+				</tr>
+				<tr>
+					<td>Jurusan</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fjurmhs"></td>
+				</tr>
+				<tr>
+					<td>Program Studi</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fprodimhs"></td>
+				</tr>
+				<tr>
+					<td>Kode Mahasiswa*</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkodemhs" required="yes"></td>
+				</tr>
+				<tr>
+					<td>Nama Mahasiswa*</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fnamamhs" required="yes"></td>
+				</tr>
+				<tr>
+					<td>NIK Mahasiswa(No KTP)*</td>
+				</tr>
+				<tr>
+					<td><input type = "number" max = "16" name = "fnikmhs"></td>
+				</tr>
+				<tr>
+					<td>No BPJS</td>
+				</tr>
+				<tr>
+					<td><input type = "number" name = "fbpjsmhs"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+				</tr>
+				<tr>
+					<td><input type = "password" name = "fpassmhs"></td>
+				</tr>
+				<tr>
+					<td>Tahun Angkatan*</td>
+				</tr>
+				<tr>
+					<td><input type = "number" name = "fthnmhs" required = "yes"></td>
+				</tr>
+				<tr>
+					<td>Semester Masuk*</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fsemmhs">
+							<option value = ""></option>
+							<option value = "sem1">Semester 1</option>
+							<option value = "sem3">Semester 3</option>
+							<option value = "sem5">Semester 5</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Dosen Pembimbing Akademik</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fdsnmhs"></td>
+				</tr>
+				<tr>
+					<td>No Telp Orangtua / Wali</td>
+				</tr>
+				<tr>
+					<td><input type = "number" max = "12" name = "ftelortumhs"></td>
+				</tr>
+				<tr>
+					<td>No HP Mahasiswa</td>
+				</tr>
+				<tr>
+					<td><input type = "number" max = "12" name = "fhpmhs"></td>
+				</tr>
+				<tr>
+					<td>Tempat Tinggal Saat Kuliah</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="ftemtinmhs">
+							<option value = "">--Pilih Jenis Tinggal--</option>
+							<option value = "rumah">Rumah Pribadi</option>
+							<option value = "kosan">Kos</option>
+							<option value = "asrama">Asrama</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Jenis Kelamin</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fjkmhs">
+							<option value = ""></option>
+							<option value = "pria">Pria</option>
+							<option value = "wanita">Wanita</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+				<tr>
+				<td><input type = "submit" name = "fsubmit" value = "Simpan">
+				<input type = "reset" name = "fbatal" value = "Batal"></td>
+				</tr>
+			</table>
+	</div>
+	<div class="b">
+			<table>
+				<tr>
+					<td>Agama</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fagamammhs">
+							<option value = ""></option>
+							<option value = "islam">Islam</option>
+							<option value = "kristen">Kristen</option>
+							<option value = "katolik">Katolik</option>
+							<option value = "budha">Budha</option>
+							<option value = "hindu">Hindu</option>
+							<option value = "konghucu">Konghucu</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Status Marital</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fstatusmmhs">
+							<option value = ""></option>
+							<option value = "kawin">Kawin</option>
+							<option value = "blmkawin">Belum Kawin</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Nama Ibu Kandung</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fnamaibumhs"></td>
+				</tr>
+				<tr>
+					<td>Nama Ayah Kandung</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fnamaayahmhs"></td>
+				</tr>
+				<tr>
+					<td>Tempat Lahir</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "ftmplhrmhs"></td>
+				</tr>
+				<tr>
+					<td>Tanggal Lahir</td>
+				</tr>
+				<tr>
+					<td><input type = "date" name = "ftgllhrmhs"></td>
+				</tr>
+				<tr>
+					<td>Kewarganegaraan</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fwnmhs">
+							<option value = ""></option>
+							<option value = "wni">WNI</option>
+							<option value = "wna">WNA</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Alamat Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "falmmhs"></td>
+				</tr>
+				<tr>
+					<td>RT/RW Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "number" name = "frtmhs">
+					/
+					<input type = "number" name = "frwmhs"></td>
+				</tr>
+				<tr>
+					<td>Desa/Kelurahan Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkelmhs"></td>
+				</tr>
+				<tr>
+					<td>Kecamatan Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkecmhs"></td>
+				</tr>
+				<tr>
+					<td>Kota Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkotamhs"></td>
+				</tr>
+				<tr>
+					<td>Kode Pos Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "number" max = "5" name = "fkdposmhs"></td>
+				</tr>
+				<tr>
+					<td>Provinsi Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fprovmhs"></td>
+				</tr>
+				<tr>
+					<td>Negara Asal</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fnegaramhs"></td>
+				</tr>
+			</table>
+	</div>
+	<div class="c">
+			<table>
+				<tr>
+					<td>Alamat Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "falmtsamhs"></td>
+				</tr>
+				<tr>
+					<td>RT/RW Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "number" name = "frtsmhs">
+					/
+					<input type = "number" name = "frwsmhs"></td>
+				</tr>
+				<tr>
+					<td>Desa/Kelurahan Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkelsmhs"></td>
+				</tr>
+				<tr>
+					<td>Kecamatan Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkecsmhs"></td>
+				</tr>
+				<tr>
+					<td>Kota Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fkotasmhs"></td>
+				</tr>
+				<tr>
+					<td>Kode Pos Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "number" max = "5" name = "fkdpossmhs"></td>
+				</tr>
+				<tr>
+					<td>Provinsi Sekarang</td>
+				</tr>
+				<tr>
+					<td><input type = "text" name = "fprovsmhs"></td>
+				</tr>
+				<tr>
+					<td>Transfer</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="ftfmhs">
+							<option value = "tidak">Tidak</option>
+							<option value = "ya">Ya</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Jenis Pendaftaran</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fjpmhs">
+							<option value = "">-</option>
+							<option value = "pmdk">PMDK / Prestasi</option>
+							<option value = "reguler">Reguler</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Status</td>
+				</tr>
+				<tr>
+					<td>
+						<select name ="fstatusmhs">
+							<option value = "">Pilih</option>
+							<option value = "aktif">Aktif</option>
+							<option value = "cuti">Cuti</option>
+							<option value = "mangkir">Mangkir</option>
+							<option value = "aktifkeu">Aktif Keuangan</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+	</div>
+		</form>
+	
+</body>
+</html>

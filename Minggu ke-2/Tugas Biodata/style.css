@@ -1,0 +1,77 @@
+body{
+	margin: auto;
+	width: 700px;
+	font-size: 14px;
+	font-family: arial;
+	background-color: #e4e4e4;
+	
+}
+h1{
+	margin-bottom: 8px;
+	text-align: center;
+	border-bottom: 2px solid red;
+}
+img{
+	border-top: 4px solid white;
+	border-bottom : 4px solid white; 
+	border-right: 4px solid white;
+	border-left: 4px solid white;
+}
+#profil{
+	position: relative;
+}
+
+.kiri{
+	position: absolute;
+	left: 0px;
+
+}
+
+.kanan{
+	position: absolute;
+	right: 100px;
+
+}
+h2{
+	margin-left: 11px;
+}
+.bawah{
+	height: 300px;
+	padding: 1px;
+	position: relative;
+	bottom: -352px;
+	background-color: white;
+	border-radius: 5px; 
+}
+
+button{
+	position: absolute;
+	right: 100px;
+	bottom: -16px;
+	width: 125px;
+	height: 32px;
+	border: none;
+	background: #c0202e;
+	transition: 0.2s ease;
+	cursor: pointer;
+}
+button:hover{
+	background:	red;
+
+}
+
+table{
+	margin-left: 11px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.kanan th{
+	padding: 7px;
+	border-bottom: 1px solid;
+}
+
+.bawah th{
+	padding: 4px;
+	
+}
