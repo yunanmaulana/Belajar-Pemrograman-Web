@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom10</title>
+</head>
+<body>
+	<div id="div1">
+		<p>this is new</p>
+	<p id="p2">this is another paragraph</p>
+	</div>
+	<script>
+		var parent = document.getlementById("div1");
+		var child = document.getlementById("p1");
+		var	para = document.createElement("p");
+		var node = document.createTextNode("this is new");
+		para.appendChild(node)
+		parent.replaceChild(para, child);
+	</script>
+</body>
+</html>

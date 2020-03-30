@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom6</title>
+</head>
+<body>
+	<div onmousedown="myDown(this)" onmouseup="myUp(this)"style="background-color: aqua; width: 150px; height: 20px;	padding: 50px">
+		<h2>Click Me!</h2>	
+	</div>
+	<script>
+		function myDown(obj){
+			obj.style.backgroundColor="red";
+			obj.innerHTML = "<h2>Release Me</h2>";
+		}
+		function myUp(obj){
+			obj.style.backgroundColor="green";
+			obj.innerHTML="<h2>Thank You</h2>";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom7</title>
+	<style>
+		div{
+			background-color: aqua;
+			border: 1px solid;
+			padding: 50px;
+		}
+	</style>
+</head>
+<body>
+	<p> This example demontrates the difference between bubbling and capturing when adding event listeners.  </p>
+	<div id="myDiv">
+		<p id="myP">Click this paragraph, I am Bubbling</p>
+	</div>
+	<br>
+	<div id="myDiv2">
+		<p id="myP2">Click this paragraph, I am Capturing</p>
+	</div>
+	<script>
+		document.getElementById("myP").addEventListener("click", function(){
+			alert("You Clicked the P element!");
+		}, false);
+		document.getElementById("myDiv").addEventListener("click", function(){
+			alert("You Clicked the div element!");
+		}, false);
+		document.getElementById("myP2").addEventListener("click", function(){
+			alert("You Clicked the P element!");
+		}, false);
+		document.getElementById("myDiv2").addEventListener("click", function(){
+			alert("You Clicked the div element!");
+		}, false);
+	</script>
+</body>
+</html>
