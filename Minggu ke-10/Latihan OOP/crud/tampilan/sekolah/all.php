@@ -1,7 +1,11 @@
 <?php
 $koneksi = new Koneksi();
-$data = $koneksi->show(); 
-$data = $koneksi->search(); 
+$search = $koneksi->search();
+if ($search) {
+	$data = $koneksi->search();
+}
+else
+$data = $koneksi->show();
 ?> 
 <a class="btn pull-right" href="index.php?p=sekolah&m=add">Tambah Baru</a> 
 <h2>Data Sekolah</h2> 
